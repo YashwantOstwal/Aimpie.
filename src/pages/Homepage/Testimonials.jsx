@@ -22,7 +22,7 @@ export default function Testimonials(){
         isInView? (
             controlInterval = setInterval(()=>{
                 setCardId((prevState)=>{return `${(prevState+1)%3 }`});
-            },2000)
+            },2200)
         ):(
             clearInterval(controlInterval)
             
