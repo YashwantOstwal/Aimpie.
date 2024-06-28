@@ -5,7 +5,7 @@ export default function ContactUs(){
     return (
         <div className = 'h-screen flex justify-center bg-[#1F1634] md:items-center bg-aimpie bg-no-repeat bg-top'>
             <div className = 'w-[80%] bg-center max-md:my-[10%] max-md:h-[80%] flex flex-col justify-center bg-[#BBBDFA] text-[#1F1634] rounded-2xl lilita-one-regular'>
-                <button onClick = {()=>{navigate('/')}} className = 'flex justify-center text-2xl md:text-3xl'>
+                <button onClick = {()=>{navigate('/')}} className = 'flex justify-center text-xl md:text-3xl'>
                 ← Back
                 </button> 
                 <div className = 'text-4xl pt-[2%] pb-[4%] md:text-5xl flex justify-center'>
