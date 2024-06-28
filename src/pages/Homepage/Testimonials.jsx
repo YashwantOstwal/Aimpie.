@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useRef, memo, useState, useMemo } from 'react'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
-import axios from 'axios'
 import instaCapLogo from '../../assets/images/brandLogos/instaCapLogo.png'
 import streamrLogo from '../../assets/images/brandLogos/streamrLogo.png'
 import zonarisLogo from '../../assets/images/brandLogos/zonarisLogo.png'
 import idAtom from '../../store/atoms.jsx'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import brandReviews from './data/brandReviews.js'
-import Marquee from 'react-fast-marquee'
 import { useNavigate } from 'react-router-dom'
 
 let controlInterval;
@@ -24,7 +22,7 @@ export default function Testimonials(){
         isInView? (
             controlInterval = setInterval(()=>{
                 setCardId((prevState)=>{return `${(prevState+1)%3 }`});
-            },2500)
+            },2200)
         ):(
             clearInterval(controlInterval)
             
@@ -67,12 +65,6 @@ const RadioButton = memo((props)=>{
 function Card(){
 
     const cardId = useRecoilValue(idAtom);
-    const [data,setData] = useState('')
-
-    useEffect(()=>{
-    axios.get(`/aimpie/brandReviews/?id=${cardId}`).then(response =>  response.data).then(data=> setData(data))
-},[cardId])
-
     return (
         <>
                 <div className = ' flex justify-center lilita-one-regular text-2xl md:text-4xl text-white'> /Fetching from API with axios{'.'.repeat(parseInt(cardId)+1)}</div>
@@ -82,7 +74,7 @@ function Card(){
         >
             <div className = 'w-[80%] lilita-one-regular h-60 bg-[#141414] text-clamp p-[3%] rounded-3xl'>
                 <p className = 'bg-gradient-to-t from-[#C1ED42] to-white text-transparent bg-clip-text'>
-                "{data}"
+                "{brandReviews[cardId].content}"
                 </p>
             </div>
         </motion.div>
