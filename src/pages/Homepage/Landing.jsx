@@ -14,7 +14,7 @@ export default function Landingpage(){
             >
                 <img className = 'lg:w-[12%] w-[40%] h-fit' src = {aimpieLogo2} />
                 <motion.button className = 'bg-[#A594FD] px-[1%] rounded-lg lilita-one-regular ' onClick={()=>{navigate('/contactus')}}
-                  initial ={{rotate:"-4deg"}}  whileHover = {{rotate:["4deg","-4deg","0deg"],backgroundColor:"white"}} transition ={{duration:0.5}}
+                  initial ={{rotate:"-2deg"}}  whileHover = {{rotate:["4deg","-4deg","0deg"],backgroundColor:"white"}} transition ={{duration:0.5}}
                 > Contact Us</motion.button>
             </motion.div>
             <motion.div className = 'bg-landing bg-cover h-screen bg-center border-red-100'
