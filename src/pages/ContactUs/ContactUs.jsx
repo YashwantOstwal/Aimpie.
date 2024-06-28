@@ -28,8 +28,8 @@ export default function ContactUs(){
 function Input({container,type}){
     return (
         <div className = 'relative m-[2%] w-[100%]'>
-            <label className = 'lilita-one-regular text-[#1F1634] px-2 bg-[#BBBDFA] absolute -top-3 left-3 lg:text-2xl' htmlFor={container}>{container} :</label>
-            <input className = 'rounded-lg bg-transparent border-[#1F1634]  border-2 md:border-4 outline-none caret-[#1F1634] px-[2%] pt-[2%] pb-[1%] text-[#1F1634] w-[100%] md:text-xl' type={type} id={container} name = {container}/>
+            <label className = 'lilita-one-regular text-[#1F1634] px-2 bg-[#BBBFDA] absolute -top-3 left-3 lg:text-2xl' htmlFor={container}>{container} :</label>
+            <input className = 'rounded-lg bg-transparent border-[#1F1634]  border-2 md:border-4 outline-none caret-[#1F1634] px-[2%] pt-[3%] pb-[1%] text-[#1F1634] w-[100%] md:text-xl' type={type} id={container} name = {container}/>
         </div>
     );
 }
