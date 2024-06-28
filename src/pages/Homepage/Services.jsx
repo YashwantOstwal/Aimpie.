@@ -46,13 +46,13 @@ export default function Services(){
       </div>
       <div className = 'lilita-one-regular text-[#faf6cd]/50 text-2xl md:text-3xl text-center'>/Hover :</div> 
       <div className = ' h-screen flex justify-center'>
-        <div className =  'relative w-[80%] h-[80%]  text-5xl md:text-8xl  oswald-700 text-[#faf6cd]'>
+        <div className =  'relative w-[80%] h-[80%]  text-[40px] md:text-8xl  oswald-700 text-[#faf6cd]'>
             <motion.div className = 'z-10 absolute flex justify-around h-[40%] w-full bg-black'
               onMouseEnter = {handleHoverStrategy} onMouseLeave={handleHoverStrategy2}>
                 <motion.div
                   variants = {variants} animate = {strategy1} transition={{duration:0.2,ease:'easeIn'}}
                 >
-                  <div className = 'pt-[16%]'> STRATEGY</div>
+                  <div className = 'mt-[16%] max-md:bg-neutral-100 max-md:text-black max-md:px-3'> STRATEGY</div>
                 </motion.div>
                 <motion.div className = 'w-[45%] h-[100%] relative poppins-medium text-[#141414] text-[10px] text-nowrap'
                   initial = {{y:'20px',opacity:0}} variants = {variants} animate = {strategy2} transition = {{duration:0.2,ease:'easeIn'}}
@@ -71,7 +71,7 @@ export default function Services(){
                 <motion.div
                   variants = {variants} animate = {design1} transition={{duration:0.2,ease:'easeIn'}}
                 >
-                  <div className = 'pt-[21%]'> DESIGN</div>
+                  <div className = 'mt-[21%]  max-md:bg-neutral-100 max-md:text-black max-md:px-3'> DESIGN</div>
                 </motion.div>
             </motion.div>
             <motion.div className = 'z-30 absolute top-[60%] flex justify-around h-[40%] w-full border-t border-neutral-100/20 bg-black'
@@ -79,7 +79,7 @@ export default function Services(){
                 <motion.div
                   variants = {variants} animate = {development1} transition={{duration:0.2,ease:'easeIn'}}
                 >
-                  <div className = 'pt-[11%]'> DEVELOPMENT</div>
+                  <div className = 'mt-[13%]  max-md:bg-neutral-100 max-md:text-black max-md:px-3 md:text-[90px]'> DEVELOPMENT</div>
                 </motion.div>
                 <motion.div className = 'w-[45%] h-[100%] relative poppins-medium text-[#141414] text-[10px] text-nowrap'
                   initial = {{y:'20px',opacity:0}} variants = {variants} animate = {development2} transition = {{duration:0.2,ease:'easeIn'}}
@@ -97,16 +97,16 @@ export default function Services(){
 function OnHoverStrategy(props){
   return (
     <div className = 'overflow-hidden'>
-      <div className = {`absolute top-[10%] right-[30%] ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit`}>
+      <div className = {`fixed top-[10%] right-[30%] ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit`}>
         {props.constituents[0]}
       </div>
-      <div className = {`absolute ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit top-[25%] left-[5%]`} >
+      <div className = {`fixed ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit top-[25%] left-[5%]`} >
         {props.constituents[1]}
       </div>
-      <div className = {`absolute ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit top-[35%] left-[35%]`} >
+      <div className = {`fixed ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit top-[35%] left-[25%]`} >
         {props.constituents[2]}
       </div>
-      <div className = {`absolute ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit bottom-[40%] right-[10%]`} >
+      <div className = {`fixed ${props.cloudColor} md:p-[2%] p-[3%] rounded-full w-fit bottom-[40%] right-[10%]`} >
         {props.constituents[3]}
       </div>
     </div>
