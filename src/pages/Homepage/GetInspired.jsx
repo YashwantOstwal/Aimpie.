@@ -21,7 +21,7 @@ export default function GetInspired(){
             </motion.p>
         </div>
         <div  className = 'bg-[#000000]'>
-            <motion.div style = {{opacity,backgroundColor}} className = ' flex justify-center h-screen max-md:hidden'>
+            <motion.div style = {{opacity,backgroundColor}} className = ' flex justify-center h-screen max-md:hidden overflow-hidden'>
                 <div className = 'flex flex-col justify-center anton-regular px-[10%] text-7xl md:text-9xl text-[#141414] w-[80%] '>
                     <motion.div style = {{x:leftTransition,paddingBottom:"30px"}}  ref = {targetRef}>FEELING</motion.div>
                     <motion.div style = {{x:rightTransition,paddingBottom:"30px"}} >INSPIRED FOR A</motion.div>
