@@ -12,7 +12,7 @@ export default function Landingpage(){
             <motion.div className = 'flex justify-center md:justify-start bg-[#040306] space-x-5 p-[10%] md:p-[6%] lg:p-[2%]'
                 variants = {variants} initial = "hideLogo" animate = "animateLogo" transition = {{duration:0.5,delay:1.9}}
             >
-                <img className = 'lg:w-[12%] w-[40%] h-fit' src = {aimpieLogo2} />
+                <img className = 'md:w-[12%] w-[40%] h-fit' src = {aimpieLogo2} />
                 <motion.button className = 'bg-[#A594FD] px-[1%] rounded-lg lilita-one-regular ' onClick={()=>{navigate('/contactus')}}
                   initial ={{rotate:"-2deg"}}  whileHover = {{rotate:["4deg","-4deg","0deg"],backgroundColor:"white"}} transition ={{duration:0.5}}
                 > Contact Us</motion.button>
