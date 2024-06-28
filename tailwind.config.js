@@ -14,7 +14,8 @@ export default {
         clamp: "clamp(1rem, 3.5vw, 2rem)",
         clamp2:"clamp(1rem, 2vw, 1.5rem)",
         clamp3:"clamp(0.5rem, 1.5vw, 1.5rem)",
-        clamp4:"clamp(25px,7.5vw,100px)"
+        clamp4:"clamp(25px,7.5vw,100px)",
+        clamp5:'clamp(20px,10vw,200px)'
 
       }
     },
