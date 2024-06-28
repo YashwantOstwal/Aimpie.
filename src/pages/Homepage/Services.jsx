@@ -97,16 +97,16 @@ export default function Services(){
 function OnHoverStrategy(props){
   return (
     <div className = 'overflow-hidden'>
-      <div className = {`fixed top-[10%] right-[30%] ${props.cloudColor} lg:p-2 max-md:px-1 rounded-full w-fit`}>
+      <div className = {`fixed top-[10%] right-[30%] ${props.cloudColor} lg:p-[3%] max-md:px-1 rounded-full w-fit`}>
         {props.constituents[0]}
       </div>
-      <div className = {`fixed ${props.cloudColor} lg:p-2 max-md:px-1 rounded-full w-fit top-[25%] left-[5%]`} >
+      <div className = {`fixed ${props.cloudColor} lg:p-[3%] max-md:px-1 rounded-full w-fit top-[25%] left-[5%]`} >
         {props.constituents[1]}
       </div>
-      <div className = {`fixed ${props.cloudColor} lg:p-2 max-md:px-1 rounded-full w-fit top-[35%] left-[25%]`} >
+      <div className = {`fixed ${props.cloudColor} lg:p-[3%] max-md:px-1 rounded-full w-fit top-[35%] left-[25%]`} >
         {props.constituents[2]}
       </div>
-      <div className = {`fixed ${props.cloudColor} lg:p-2 max-md:px-1 rounded-full w-fit bottom-[40%] right-[10%]`} >
+      <div className = {`fixed ${props.cloudColor} lg:p-[3%] max-md:px-1 rounded-full w-fit bottom-[40%] right-[10%]`} >
         {props.constituents[3]}
       </div>
     </div>
