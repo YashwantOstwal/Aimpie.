@@ -57,8 +57,8 @@ const RadioButton = memo((props)=>{
     const cardId = useRecoilValue(idAtom)
     return (
     <div className = 'flex gap-2 px-[1%] rounded-2xl'>
-        <input className = 'w-5 accent-[#C1ED42]'type="radio" checked = {cardId === props.value} value = {props.value} onChange = {(e)=>{props.handleChange(e.target.value)}}/>
-        <div className = 'w-20  flex flex-col justify-center'  ><img src = {props.children} alt="Logo" /></div>
+        <input id = {props.value} className = 'w-5 accent-[#C1ED42]'type="radio" checked = {cardId === props.value} value = {props.value} onChange = {(e)=>{props.handleChange(e.target.value)}}/>
+        <label for={props.value} className = 'w-20  flex flex-col justify-center'  ><img src = {props.children} alt="Logo" /></label>
     </div>
     );
 });
