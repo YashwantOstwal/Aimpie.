@@ -1,6 +1,4 @@
-import { useScroll, useTransform,motion,useAnimation } from "framer-motion";
-import { useRef,useState } from "react";
-import ourclients from "./Testimonials";
+import { motion,useAnimation } from "framer-motion";
 import {variants,cloudContent} from './data/services'
 
 export default function Services(){
@@ -48,7 +46,8 @@ export default function Services(){
       <div className = ' h-screen flex justify-center'>
         <div className =  'relative w-[80%] h-[80%]  text-[40px] md:text-8xl  oswald-700 text-[#faf6cd]'>
             <motion.div className = 'z-10 absolute flex justify-around h-[40%] w-full bg-black'
-              onMouseEnter = {handleHoverStrategy} onMouseLeave={handleHoverStrategy2}>
+              onMouseEnter = {handleHoverStrategy} onMouseLeave={handleHoverStrategy2}
+            >
                 <motion.div
                   variants = {variants} animate = {strategy1} transition={{duration:0.2,ease:'easeIn'}}
                 >
@@ -57,34 +56,34 @@ export default function Services(){
                 <motion.div className = 'w-[45%] h-[100%] relative poppins-medium text-[#141414] text-[10px] text-nowrap'
                   initial = {{y:'20px',opacity:0}} variants = {variants} animate = {strategy2} transition = {{duration:0.2,ease:'easeIn'}}
                 >
-                  <OnHoverStrategy constituents = {cloudContent.startegy} cloudColor ="bg-[#BBBDFA]"/>
+                  <OnHover constituents = {cloudContent.startegy} cloudColor ="bg-[#BBBDFA]"/>
                 </motion.div>
             </motion.div>
             
             <motion.div className = 'z-20 absolute top-[30%] flex max-md:flex-row-reverse justify-around h-[40%] w-full border-y border-neutral-100/20 bg-black'
-              onMouseEnter = {handleHoverDesign} onMouseLeave={handleHoverDesign2}> 
+              onMouseEnter = { handleHoverDesign } onMouseLeave = { handleHoverDesign2 }> 
                 <motion.div className = 'w-[45%] h-[100%] relative poppins-medium text-[#141414] text-[10px] text-nowrap'
                   variants = {variants} initial = {{y:'20px',opacity:0}}  animate = {design2} transition = {{duration:0.2,ease:'easeIn'}}
                 >
-                  <OnHoverStrategy constituents = {cloudContent.design} cloudColor ="bg-[#C1ED42]" />
+                  <OnHover constituents = {cloudContent.design} cloudColor = "bg-[#C1ED42]" />
                 </motion.div>
                 <motion.div
-                  variants = {variants} animate = {design1} transition={{duration:0.2,ease:'easeIn'}}
+                  variants = {variants} animate = {design1} transition = {{duration:0.2,ease:'easeIn'}}
                 >
-                  <div className = 'mt-[21%]  max-md:bg-neutral-100 max-md:text-black max-md:px-3'> DESIGN</div>
+                  <div className = 'mt-[21%] max-md:bg-neutral-100 max-md:text-black max-md:px-3'>DESIGN</div>
                 </motion.div>
             </motion.div>
             <motion.div className = 'z-30 absolute top-[60%] flex justify-around h-[40%] w-full border-t border-neutral-100/20 bg-black'
-              onMouseEnter = {handleHoverDevelopment} onMouseLeave={handleHoverDevelopment2}>
+              onMouseEnter = {handleHoverDevelopment} onMouseLeave = { handleHoverDevelopment2 }>
                 <motion.div
                   variants = {variants} animate = {development1} transition={{duration:0.2,ease:'easeIn'}}
                 >
-                  <div className = 'mt-[13%]  max-md:bg-neutral-100 max-md:text-black max-md:px-3 md:text-[90px]'> DEVELOPMENT</div>
+                  <div className = 'mt-[13%]  max-md:bg-neutral-100 max-md:text-black max-md:px-3 md:text-[90px]'>DEVELOPMENT</div>
                 </motion.div>
                 <motion.div className = 'w-[45%] h-[100%] relative poppins-medium text-[#141414] text-[10px] text-nowrap'
                   initial = {{y:'20px',opacity:0}} variants = {variants} animate = {development2} transition = {{duration:0.2,ease:'easeIn'}}
                 >
-                  <OnHoverStrategy constituents = {cloudContent.development} cloudColor ="bg-neutral-100"/>
+                  <OnHover constituents = {cloudContent.development} cloudColor ="bg-neutral-100"/>
                 </motion.div>
             </motion.div>
             <div className = 'z-40 absolute top-[90%] pt-[6%] w-full border-t border-neutral-100/20 bg-black'></div>
@@ -94,7 +93,7 @@ export default function Services(){
   );
 }
 
-function OnHoverStrategy(props){
+function OnHover(props){
   return (
     <div className = 'overflow-hidden'>
       <div className = {`fixed top-[10%] right-[30%] ${props.cloudColor} lg:p-[3%] max-md:px-1 rounded-full w-fit`}>
@@ -113,4 +112,3 @@ function OnHoverStrategy(props){
   );
 }
 
-//create auto positioning upon each hover.

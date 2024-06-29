@@ -44,26 +44,26 @@ function ShowHideButton(props){
     return(
       <>
         {props.isOpen?
-        (<button className = 'w-[15%] flex justify-center items-center'onClick={handleClick}> <img className='col-gap-1 w-[100%] ' src={upArrow} /></button>):
-        (<button className = 'w-[15%] flex justify-center items-center'onClick={handleClick}> <img className='col-gap-1 w-[100%]' src={downArrow} /></button>)}
+            ( <button className = 'w-[15%] flex justify-center items-center' onClick = { handleClick }> <img className='col-gap-1 w-[100%] ' src={upArrow} /></button>
+            ):(
+            <button className = 'w-[15%] flex justify-center items-center' onClick = { handleClick }> <img className='col-gap-1 w-[100%]' src={downArrow} /></button> )}
       </>
     );
   }
 
 function ShowContent({color,description,img}){
-    console.log(color)
-    const [show,setShow] = useState(false)
+    const [show,setShow] = useState(false);
     function handleClick(){
-        setShow((prevState)=>{return !prevState})
+        setShow((prevState)=>{return !prevState});
       }
     return (
         <div className = 'w-[100%] flex justify-center'>
             <div className = {`w-10/12 shadow rounded-xl ${color} m-[3%] text-[#faf6cd] poppins-medium`}>
                 <div className = 'p-[3%] space-y-10'>
                     <div>
-                    <div className = 'p-2 rounded-full border-2 border-dotted text-[#9e9ea7] poppins-medium text-nowrap w-fit h-fit text-sm'>aim ✱ <span className = 'font-semibold text-[#C1ED42]'>description</span></div>
+                        <div className = 'p-2 rounded-full border-2 border-dotted text-[#9e9ea7] poppins-medium text-nowrap w-fit h-fit text-sm'>aim ✱ <span className = 'font-semibold text-[#C1ED42]'>description</span></div>
                     </div>
-                    <p className = {` ${!show && ('max-md:line-clamp-2')}`}>
+                    <p className = {`${!show && ('max-md:line-clamp-2')}`}>
                         {description}
                     </p>
                     <div className = 'flex justify-end md:hidden'>
@@ -72,7 +72,7 @@ function ShowContent({color,description,img}){
                         </button>
                     </div>
                     <div className='flex justify-center py-[5%] gap-4'>
-                        <img className='w-3/5 rounded-xl' src={img}/>
+                        <img className = 'w-3/5 rounded-xl' src={img}/>
                     </div>
                 </div>
             </div>

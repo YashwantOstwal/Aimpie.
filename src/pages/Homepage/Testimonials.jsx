@@ -10,11 +10,10 @@ import { useNavigate } from 'react-router-dom'
 
 let controlInterval;
 export default function Testimonials(){
-    const navigate = useNavigate();
-    const targetRef = useRef(null)
-    const [unclicked,setUnclicked]  = useState(true)
+    const targetRef = useRef(null);
+    const [unclicked,setUnclicked]  = useState(true);
 
-    const isInView = useInView(targetRef) && unclicked
+    const isInView = useInView(targetRef) && unclicked;
     const setCardId = useSetRecoilState(idAtom);
 
 
@@ -33,6 +32,7 @@ export default function Testimonials(){
         setUnclicked(false);
         setCardId(value);
     });
+
     return (
         <div className = 'bg-gradient-to-b from-[#c1ed42] to-black'>
             <div className = 'mx-[5%]'>
@@ -54,7 +54,8 @@ export default function Testimonials(){
 }
 
 const RadioButton = memo((props)=>{
-    const cardId = useRecoilValue(idAtom)
+    const cardId = useRecoilValue(idAtom);
+
     return (
     <div className = 'flex gap-2 px-[1%] rounded-2xl'>
         <input id = {props.value} className = 'w-5 accent-[#C1ED42]'type="radio" checked = {cardId === props.value} value = {props.value} onChange = {(e)=>{props.handleChange(e.target.value)}}/>
@@ -62,23 +63,33 @@ const RadioButton = memo((props)=>{
     </div>
     );
 });
-function Card(){
 
+function Card(){
     const cardId = useRecoilValue(idAtom);
+    /*
+    API crashed, Will be fixed soon... 
+    let data;
+    useEffect(()=>{
+    (async()=>{
+        const response = axios.get(`/aimpie/brandReviews/id?${cardId}`);
+        data = response.data;
+    })();
+    },[cardId]);
+    */
     return (
         <>
-                <div className = ' flex justify-center lilita-one-regular text-2xl md:text-4xl text-white'> /Fetching from API with axios{'.'.repeat(parseInt(cardId)+1)}</div>
-    <AnimatePresence mode= "wait">
-        <motion.div className = 'flex justify-center py-[4%]'
-            key = {cardId} initial ={{scale:0.9}} animate ={{scale:1}} exit = {{scale:0.9}} transition ={{duration:0.4}}
-        >
-            <div className = 'w-[80%] lilita-one-regular h-60 bg-[#141414] text-clamp p-[3%] rounded-3xl'>
-                <p className = 'bg-gradient-to-t from-[#C1ED42] to-white text-transparent bg-clip-text'>
-                "{brandReviews[cardId].content}"
-                </p>
-            </div>
-        </motion.div>
-    </AnimatePresence>
-    </>
+            <div className = ' flex justify-center lilita-one-regular text-2xl md:text-4xl text-white'> /Fetching from API with axios{'.'.repeat(parseInt(cardId)+1)}</div>
+            <AnimatePresence mode= "wait">
+                <motion.div className = 'flex justify-center py-[4%]'
+                    key = {cardId} initial ={{scale:0.9}} animate ={{scale:1}} exit = {{scale:0.9}} transition ={{duration:0.4}}
+                >
+                    <div className = 'w-[80%] lilita-one-regular h-60 bg-[#141414] text-clamp p-[3%] rounded-3xl'>
+                        <p className = 'bg-gradient-to-t from-[#C1ED42] to-white text-transparent bg-clip-text'>
+                            "{brandReviews[cardId].content}"
+                            </p>
+                    </div>
+                </motion.div>
+            </AnimatePresence>
+        </>
     );
 }

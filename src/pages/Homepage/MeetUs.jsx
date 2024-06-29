@@ -1,16 +1,15 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import Playground from './PlayGround'
 
 export default function MeetUs(){
     const targetRef = useRef(null);
     const { scrollYProgress} = useScroll({
         target:targetRef,
         offset:["center end","1.3 end"]
-    })
-    const opacity = useTransform(scrollYProgress,[0,0.5],[0.5,1])
-    const scale = useTransform(scrollYProgress,[0,1],[0.5,0.9])
-    const y = useTransform(scrollYProgress,[0,1],["50px","0px"])
+    });
+    const opacity = useTransform(scrollYProgress,[0,0.5],[0.5,1]);
+    const scale = useTransform(scrollYProgress,[0,1],[0.5,0.9]);
+    const y = useTransform(scrollYProgress,[0,1],["50px","0px"]);
 
     return (
         <>
@@ -35,9 +34,9 @@ export default function MeetUs(){
 }
 function TextPositioner(props){
     return (
-    <div className ='flex gap-1'>
-        <span className = 'text-[#C1ED42] text-5xl oswald-700'>{props.num}</span>
-        <span className = 'text-[#9e9ea7] text-sm poppins-light'>{props.text}</span>
-    </div>
+        <div className ='flex gap-1'>
+            <span className = 'text-[#C1ED42] text-5xl oswald-700'>{props.num}</span>
+            <span className = 'text-[#9e9ea7] text-sm poppins-light'>{props.text}</span>
+        </div>
     );
 }

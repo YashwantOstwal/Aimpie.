@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee"
 import ourSelectedWork from '../../assets/images/ourSelectedWork.png'
+
 export default function WorkMarquee (){
     return (
         <div className = 'space-y-4 bg-black py-[2%]'>

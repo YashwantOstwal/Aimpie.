@@ -6,13 +6,14 @@ export default function GetInspired(){
     const {scrollYProgress} = useScroll({
         target: targetRef,
         offset: ['start end','end start']
-    })
+    });
     const leftTransition = useTransform(scrollYProgress,[0,1],["200px","0px"]);
     const rightTransition =useTransform(scrollYProgress,[0,1],["-170px","0px"]);
     const backgroundColor = useTransform(scrollYProgress,(pos)=>{
         return pos?"#c1ed42":"#000000"
-    })
+    });
     const opacity = useTransform(scrollYProgress,[0,0.4],[0,1]);
+    
     return (
     <>
         <div className = 'flex justify-center bg-[#c1ed42] py-[10%] md:hidden'>
